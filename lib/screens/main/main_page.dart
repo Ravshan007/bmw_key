@@ -57,7 +57,7 @@ class _MainPageState extends State<MainPage> {
             ],
             currentIndex: _selectedIndex,
             unselectedItemColor: Colors.white,
-            selectedItemColor: const Color(0xff2196f3),
+            selectedItemColor: AppColors.C_2196F3,
             backgroundColor: AppColors.C_0B0B14,
             onTap: _onItemTapped,
           ),
