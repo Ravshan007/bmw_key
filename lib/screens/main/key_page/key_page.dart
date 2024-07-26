@@ -1,13 +1,7 @@
 import 'package:bmw_key/core/constants/constants.dart';
 import 'package:bmw_key/core/widgets/unlock_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'dart:ui';
-
 import 'package:google_fonts/google_fonts.dart';
 
 class KeyPage extends StatefulWidget {
@@ -84,9 +78,10 @@ class _KeyPageState extends State<KeyPage> {
                         "2015",
                         style: GoogleFonts.metrophobic(
                           textStyle: const TextStyle(
-                              fontSize: 22,
-                              color: AppColors.white,
-                              fontWeight: FontWeight.w400),
+                            fontSize: 22,
+                            color: AppColors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     )
@@ -143,44 +138,90 @@ class _KeyPageState extends State<KeyPage> {
                         width: 1,
                       ),
                     ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            AppIcons.fuel,
-                            height: 32,
-                            width: 32,
-                          ),
-                          const Text(
-                            "80%",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: AppColors.C_18A415,
-                            ),
-                          ),
-                          Container(
-                            height: 56,
-                            width: 126,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                width: 1,
-                                color: AppColors.C_1C508CFF
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(
+                                AppIcons.fuel,
+                                height: 32,
+                                width: 32,
                               ),
-                              borderRadius: const BorderRadius.all(Radius.elliptical(400, 200))
-                            ),
-                            child: Text(
-                              "270,7 km",
-                              style: GoogleFonts.metrophobic(
-                                textStyle: const TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w400,
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              const Text(
+                                "80%",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: AppColors.C_18A415,
                                 ),
                               ),
-                            ),
-                          )
-                        ],
-                      ),
+                              const Spacer(),
+                              Container(
+                                height: 56,
+                                width: 126,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    width: 1,
+                                    color: AppColors.C_1C508CFF,
+                                  ),
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.elliptical(
+                                      450,
+                                      200,
+                                    ),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 8),
+                                  child: Text(
+                                    "270,7 km",
+                                    style: GoogleFonts.metrophobic(
+                                      textStyle: const TextStyle(
+                                        color: AppColors.white,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 30),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Fuel",
+                                style: GoogleFonts.metrophobic(
+                                  textStyle: const TextStyle(
+                                    fontSize: 18,
+                                    color: AppColors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              Text(
+                                "Available range",
+                                style: GoogleFonts.metrophobic(
+                                  textStyle: const TextStyle(
+                                    fontSize: 18,
+                                    color: AppColors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 )
